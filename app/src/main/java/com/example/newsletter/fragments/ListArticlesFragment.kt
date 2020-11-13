@@ -30,5 +30,6 @@ class ListArticlesFragment : Fragment() {
         }
     }
     /*ESSAI DE COMMIT*/
+    /*ESSAI DANS L'AUTRE SENS*/
 
 }

@@ -31,8 +31,19 @@ android {
         jvmTarget = '1.8'
     }
 }
-
+apply plugin : 'kotlin-kapt'
 dependencies {
+    //sauvegarder les données dans une base de données oracle
+    def room_version = "2.2.5"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // optional - Test helpers
+    testImplementation "androidx.room:room-testing:$room_version"
     //Retrofit : Pour consommer les web services RestFul
     implementation "com.squareup.retrofit2:retrofit:2.6.0"
 //okhttp : Effectuer les requêtes HTTP (utilisée par Retrofit)
@@ -58,16 +69,4 @@ dependencies {
 
 
 }
-dependencies {
-//sauvegarder les données dans une base de données oracle
-    def room_version = "2.2.5"
 
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation "androidx.room:room-ktx:$room_version"
-
-    // optional - Test helpers
-    testImplementation "androidx.room:room-testing:$room_version"
-}
