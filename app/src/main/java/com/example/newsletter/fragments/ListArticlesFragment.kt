@@ -29,5 +29,6 @@ class ListArticlesFragment : Fragment() {
             //associer l'adapteur au recyclerview
         }
     }
+    /*ESSAI DE COMMIT*/
 
 }
