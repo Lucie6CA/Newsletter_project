@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/Lucie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lucie CARRON"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/photoLucie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="150dp">
+
+        <TextView
+            android:id="@+id/Ines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inès KERGALE"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/photoInes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/liengithub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="https://github.com/Lucie6CA/Newsletter_project"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/librairies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La liste des librairies externes utilisées dans l'applications"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/liengithub"/>
+
+    <TextView
+        android:id="@+id/fonctionnalite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La liste des fonctionnalités de l'application"
+        android:layout_marginTop="380dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/liengithub"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
