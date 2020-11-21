@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Newsletter</string>
+    <string name="accueil">Accueil</string>
+    <string name="list_articles">Liste des articles</string>
+    <string name="details_article">Article</string>
+
 </resources>
