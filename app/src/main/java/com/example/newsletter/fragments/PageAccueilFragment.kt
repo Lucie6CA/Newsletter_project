@@ -44,7 +44,7 @@ class PageAccueilFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? NavigationListener)?.let{
-            it.showInFragment(R.id.frameLayout_ListArticles,AccueilFragment("actuality"))
+            it.showInFragment(R.id.frameLayout_ListArticles,ListArticlesFragment("actuality"))
             it.updateTitle(R.string.list_articles)
         }
 

@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.example.newsletter.fragments.AccueilFragment
 import com.example.newsletter.fragments.PageAccueilFragment
 
 

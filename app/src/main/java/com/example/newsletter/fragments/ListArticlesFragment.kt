@@ -1,5 +1,7 @@
 package com.example.newsletter.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +11,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.newsletter.NavigationListener
 import com.example.newsletter.R
+import com.example.newsletter.adapters.DetailsArticleAdapter
 import com.example.newsletter.adapters.ListArticlesAdapter
 import com.example.newsletter.adapters.ListArticlesHandler
 import com.example.newsletter.data.ArticleRepository
@@ -17,7 +21,6 @@ import com.example.newsletter.models.Article
 import com.example.newsletter.models.ArticleResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.Calendar.getInstance
 
 class ListArticlesFragment (subject: String): Fragment() , ListArticlesHandler{
 
@@ -73,16 +76,26 @@ class ListArticlesFragment (subject: String): Fragment() , ListArticlesHandler{
         }
     }
 
+
     override fun showArticle(article: Article) {
-        TODO("Not yet implemented")
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.details_article)
+        }
+        val adapter = DetailsArticleAdapter(article,this)
+        recyclerView.adapter = adapter
+
     }
 
     override fun back() {
-        TODO("Not yet implemented")
+        (activity as? NavigationListener)?.let {
+            it.updateTitle(R.string.list_articles)
+        }
+        getArticles(subject)
     }
 
     override fun showPage(url: String) {
-        TODO("Not yet implemented")
+        val chemin: Uri = Uri.parse(url)
+        val naviguer = Intent(Intent.ACTION_VIEW,chemin)
+        startActivity(naviguer)
     }
-
 }
