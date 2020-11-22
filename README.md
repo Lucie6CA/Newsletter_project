@@ -3,7 +3,7 @@
  
  Application Android de Newsletter "NewsKC" exploitant les données du site https://newsapi.org/
  
-Fonctionnalités développées:
+*Fonctionnalités développées:
  
 Page d'accueil de l'application qui permet de consulter les articles d'actualités par pays,     catégories et éditeurs.
 
@@ -15,14 +15,14 @@ L'option d'ajouter des photos aux membres de l'équipe.
 
 Le coeur plein/vide si on décide d'ajouter un article aux favoris.
 
-En plus:
+*En plus:
 Le logo de notre application
 
-En cours:
+*En cours:
 Nous n'avons pas reussi à finir l'ajout des articles favoris dans la base de données 
 
 
-Contraintes:
+*Contraintes:
 
 En Kotlin
 
