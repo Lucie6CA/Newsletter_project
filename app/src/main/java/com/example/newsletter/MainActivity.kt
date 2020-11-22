@@ -2,8 +2,12 @@ package com.example.newsletter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.example.newsletter.fragments.AproposFragment
+import com.example.newsletter.fragments.FavoriteFragment
+import com.example.newsletter.fragments.ListArticlesAccueilFragment
 import com.example.newsletter.fragments.PageAccueilFragment
 
 
@@ -35,6 +39,29 @@ class MainActivity : AppCompatActivity(), NavigationListener {
             replace(id, fragment)
             addToBackStack(null)
         }.commit()
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            /*R.id.infoToolBar -> {
+                showFragment(AproposFragment())
+                updateTitle(R.string.aPropos)
+                true
+            }*/
+            R.id.favToolBar -> {
+                showFragment(FavoriteFragment())
+                updateTitle(R.string.favoris)
+                true
+            }
+            R.id.homeToolBar -> {
+                showFragment(PageAccueilFragment())
+                updateTitle(R.string.accueil)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+
+
     }
 
 

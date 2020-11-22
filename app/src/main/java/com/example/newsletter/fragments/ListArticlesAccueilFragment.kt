@@ -65,7 +65,7 @@ class ListArticlesAccueilFragment(subject:String) :Fragment(), ListArticlesAccue
             lifecycleScope.launch(Dispatchers.Main) {
                 //créer l'adapter
                 //associer l'adapteur au recyclerview
-                val adapter = ListArticlesAccueilAdapter(articles,this@ListArticlesAccueilFragment)
+                val adapter = ListArticlesAccueilAdapter(articles,this@ListArticlesAccueilFragment,requireContext())
                 recyclerView.adapter = adapter
             }
         }

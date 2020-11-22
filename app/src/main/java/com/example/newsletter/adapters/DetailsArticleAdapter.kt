@@ -1,5 +1,6 @@
 package com.example.newsletter.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,13 +10,16 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsletter.R
+import com.example.newsletter.data.FavDB
 import com.example.newsletter.fragments.ListArticlesFragment
 import com.example.newsletter.models.Article
 
 class DetailsArticleAdapter(
-    items: Article, val handler: ListArticlesHandler
+    private val context: Context, items: Article, val handler: ListArticlesHandler
     ) : RecyclerView.Adapter<DetailsArticleAdapter.ViewHolder>() {
         private val article: Article = items
+    private lateinit var favDB: FavDB
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view: View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.details_article, parent, false)
@@ -26,15 +30,32 @@ class DetailsArticleAdapter(
         holder.mArticleContent.text = article.content
         holder.mArticleNameAuthor.text = article.author
         holder.mArticleDate.text = article.publishedAt
-        holder.mButtonBack.setOnClickListener{
-            handler.back()
-        }
+        holder.mButtonBack.setOnClickListener{handler.back()}
+        holder.mButtonFavoris.setOnClickListener{
+            if (article.favorite == 0 ){
+                holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_plein)
+                article.favorite = 1
+               /* favDB.insertIntoTheDatabase(
+                    if (article.id!=null) article.id else "",
+                    if (article.title!=null) article.title else "",
+                    if (article.description!=null) article.description else "",
+                    if (article.author!=null) article.author else "",
+                    if (article.urlToImage!=null) article.urlToImage else "",
+                    if (article.url!=null) article.url else "",
+                    1)*/
 
+            }
+            else
+            {
+                article.favorite = 0
+               // favDB.remove_fav(article.id)
+                holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_vide)
+            }
+
+        }
         holder.mUrlArticle.text =article.url
 
-        holder.mUrlArticle.setOnClickListener{
-            handler.showPage(article.url)
-        }
+        holder.mUrlArticle.setOnClickListener{handler.showPage(article.url)}
         val context= holder.itemView.context
         //diplay image of article
         Glide.with(context)

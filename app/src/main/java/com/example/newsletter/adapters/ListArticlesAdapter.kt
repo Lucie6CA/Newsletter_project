@@ -1,5 +1,6 @@
 package com.example.newsletter.adapters
 
+import android.content.Context
 import android.icu.number.NumberFormatter.with
 import android.view.LayoutInflater
 import android.view.View
@@ -15,7 +16,7 @@ import com.example.newsletter.models.ArticleResponse
 import com.bumptech.glide.Glide
 
 class ListArticlesAdapter (
-        items: ArticleResponse, val handler: ListArticlesHandler
+        items: ArticleResponse, val handler: ListArticlesHandler, val context : Context
 ) : RecyclerView.Adapter<ListArticlesAdapter.ViewHolder>() {
 
     private val mArticles: ArticleResponse = items

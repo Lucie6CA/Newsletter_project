@@ -3,5 +3,7 @@
     <string name="accueil">Accueil - NewsKC </string>
     <string name="list_articles">Liste des articles</string>
     <string name="details_article">Article</string>
+    <string name="favoris">Liste des favoris</string>
+    <string name="aPropos">A propos de nous</string>
 
 </resources>
