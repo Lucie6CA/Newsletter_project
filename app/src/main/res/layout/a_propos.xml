@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="144dp"
+            android:layout_height="120dp"
             android:orientation="horizontal">
 
             <TextView
@@ -21,9 +21,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
                 android:text="Lucie CARRON"
-                android:textSize="26sp"
+                android:textSize="16sp"
+                android:layout_gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -32,18 +32,19 @@
                 android:id="@+id/photoLucie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@mipmap/ic_photo_lucie" />
         </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="144dp"
+            android:layout_height="120dp"
             android:orientation="horizontal"
             android:layout_marginTop="15dp">
 
@@ -51,10 +52,10 @@
                 android:id="@+id/Ines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:text="Inès KERGALE"
-                android:layout_marginTop="50dp"
                 android:layout_marginLeft="20dp"
-                android:textSize="26sp"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -63,12 +64,13 @@
                 android:id="@+id/photoInes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_weight="1"
                 android:background="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@mipmap/ic_photo_ines" />
         </LinearLayout>
 
     <TextView

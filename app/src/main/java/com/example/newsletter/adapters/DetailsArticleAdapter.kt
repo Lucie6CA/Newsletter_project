@@ -35,20 +35,20 @@ class DetailsArticleAdapter(
             if (article.favorite == 0 ){
                 holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_plein)
                 article.favorite = 1
-               /* favDB.insertIntoTheDatabase(
+                favDB.insertIntoTheDatabase(
                     if (article.id!=null) article.id else "",
                     if (article.title!=null) article.title else "",
                     if (article.description!=null) article.description else "",
                     if (article.author!=null) article.author else "",
                     if (article.urlToImage!=null) article.urlToImage else "",
                     if (article.url!=null) article.url else "",
-                    1)*/
+                    1)
 
             }
             else
             {
                 article.favorite = 0
-               // favDB.remove_fav(article.id)
+                favDB.remove_fav(article.id)
                 holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_vide)
             }
 
