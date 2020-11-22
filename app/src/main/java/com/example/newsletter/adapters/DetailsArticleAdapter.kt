@@ -36,12 +36,12 @@ class DetailsArticleAdapter(
                 holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_plein)
                 article.favorite = 1
                 favDB.insertIntoTheDatabase(
-                    if (article.id!=null) article.id else "",
-                    if (article.title!=null) article.title else "",
-                    if (article.description!=null) article.description else "",
-                    if (article.author!=null) article.author else "",
-                    if (article.urlToImage!=null) article.urlToImage else "",
-                    if (article.url!=null) article.url else "",
+                    article.id ?: "",
+                    article.title ?: "",
+                    article.description ?: "",
+                    article.author ?: "",
+                    article.urlToImage ?: "",
+                    article.url ?: "",
                     1)
 
             }

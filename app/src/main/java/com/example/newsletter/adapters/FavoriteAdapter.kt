@@ -40,7 +40,7 @@ class FavoriteAdapter(private val context: Context, val handler: ListArticlesHan
         holder.mArticleDescription.text = article.description
         holder.mArticleNameAuthor.text    = article.author
 
-        //holder.mArticleFavorite.setImageResource(R.drawable.ic_baseline_wysiwyg_24)
+        holder.mArticleFavorite.setImageResource(R.drawable.ic_coeur_plein)
 
         holder.mArticleTitle.setOnClickListener {
             handler.showArticle(details)
@@ -74,7 +74,7 @@ class FavoriteAdapter(private val context: Context, val handler: ListArticlesHan
         val mArticleTitle: TextView
         val mArticleDate: TextView
         val mArticleDescription: TextView
-        val mArticleFavorite: Button
+        val mArticleFavorite: ImageButton
 
         init {
             // Enable click on item
