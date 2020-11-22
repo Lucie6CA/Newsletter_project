@@ -4,31 +4,37 @@
     <item
         android:id="@+id/menu_activity_main_search"
         android:icon="@drawable/ic_baseline_search_24"
-        app:showAsAction="ifRoom"
+        app:showAsAction="ifRoom|collapseActionView"
         android:title="Rechercher"
-        android:orderInCategory="1"
         app:actionViewClass="androidx.appcompat.widget.SearchView" >
 
 </item>
     <item
-        android:id="@+id/menu_activity_main_home"
-        android:icon="@drawable/ic_baseline_home_24"
-        app:showAsAction="ifRoom"
-        android:title="Accueil"
-        android:orderInCategory="2">
+        android:id="@+id/menu_activity_main_info"
+        android:icon="@drawable/ic_baseline_info_24"
+        app:showAsAction="always"
+        android:orderInCategory="100"
+        android:title="A propos de nous"
+        >
     </item>
     <item
         android:id="@+id/menu_activity_main_fav"
         android:icon="@drawable/ic_baseline_favorite_24"
         android:title="Favoris"
+        android:orderInCategory="200"
+
         app:showAsAction="ifRoom"
-        android:orderInCategory="3">
+        >
     </item>
     <item
-        android:id="@+id/menu_activity_main_info"
-        android:icon="@drawable/ic_baseline_info_24"
+        android:id="@+id/menu_activity_main_home"
+        android:icon="@drawable/ic_baseline_home_24"
         app:showAsAction="ifRoom"
-        android:title="Paramètres"
-        android:orderInCategory="4">
+        android:orderInCategory="200"
+
+        android:title="Accueil"
+        >
     </item>
+
+
 </menu>

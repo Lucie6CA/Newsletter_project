@@ -1,7 +1,5 @@
 package com.example.newsletter.models
 
-import java.util.*
-
 data class Article(
     val id: String,
     val name: String,

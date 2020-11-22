@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity(), NavigationListener {
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(p0: String?): Boolean {
                 if(p0.isNullOrBlank()){
-                    //afficher un label recherche vide
                 }else{
                     showFragment(ListArticlesFragment(p0))
                 }
@@ -70,7 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationListener {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
+        // Gère la sélection d'item
         return when (item.itemId) {
             R.id.menu_activity_main_info -> {
                 showFragment(AproposFragment())

@@ -2,6 +2,7 @@ package com.example.newsletter.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
@@ -17,6 +18,9 @@ class PageAccueilFragment : Fragment(){
     lateinit var buttonByCategory: Button
     lateinit var buttonByCountry: Button
     lateinit var buttonByEditor: Button
+    lateinit var buttonFavoris: Button
+    lateinit var buttonAPropos: Button
+
 
 
     /**
@@ -34,6 +38,9 @@ class PageAccueilFragment : Fragment(){
         buttonByCategory=view.findViewById(R.id.buttonByCategory)
         buttonByCountry=view.findViewById(R.id.buttonByCountry)
         buttonByEditor=view.findViewById(R.id.buttonByEditor)
+        buttonFavoris=view.findViewById(R.id.buttonFavoris)
+        buttonAPropos=view.findViewById(R.id.buttonAPropos)
+
 
         return view
 
@@ -47,6 +54,43 @@ class PageAccueilFragment : Fragment(){
             it.showInFragment(R.id.frameLayout_ListArticles, ListArticlesAccueilFragment("actuality"))
         }
 
+
+        buttonAllArticles.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(ListArticlesFragment("actuality"))
+                it.updateTitle(R.string.list_articles)
+            }
+        }
+        buttonByCategory.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(ListCategoryFragment())
+                it.updateTitle(R.string.list_articles)
+            }
+        }
+        buttonByCountry.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(ListCountryFragment())
+                it.updateTitle(R.string.list_articles)
+            }
+        }
+        buttonByEditor.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(ListEditeursFragment())
+                it.updateTitle(R.string.list_articles)
+            }
+        }
+        buttonFavoris.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(FavoriteFragment())
+                it.updateTitle(R.string.favoris)
+            }
+        }
+        buttonAPropos.setOnClickListener {
+            (activity as? NavigationListener)?.let {
+                it.showFragment(AproposFragment())
+                it.updateTitle(R.string.aPropos)
+            }
+        }
 
     }
 
