@@ -15,6 +15,8 @@ L'option d'ajouter des photos aux membres de l'équipe.
 
 Le coeur plein/vide si on décide d'ajouter un article aux favoris.
 
+La toolbar fonctionnelle avec ses icônes
+
 *En plus:
 Le logo de notre application
 
