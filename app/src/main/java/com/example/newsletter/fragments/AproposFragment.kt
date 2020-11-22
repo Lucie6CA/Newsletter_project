@@ -1,4 +1,6 @@
 package com.example.newsletter.fragments
 
-class AproposFragment {
+import androidx.fragment.app.Fragment
+
+class AproposFragment : Fragment() {
 }
