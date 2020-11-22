@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationListener {
             addToBackStack(null)
         }.commit()
     }
-    override fun showInFragment(id:Int, fragment:Fragment){
+    override fun showInFragment(id:Int, fragment: Fragment){
         supportFragmentManager.beginTransaction().apply{
             replace(id, fragment)
             addToBackStack(null)

@@ -13,7 +13,7 @@ import com.example.newsletter.fragments.ListArticlesFragment
 import com.example.newsletter.models.Article
 
 class DetailsArticleAdapter(
-    items: Article, val handler: ListArticlesFragment
+    items: Article, val handler: ListArticlesHandler
     ) : RecyclerView.Adapter<DetailsArticleAdapter.ViewHolder>() {
         private val article: Article = items
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,11 +26,15 @@ class DetailsArticleAdapter(
         holder.mArticleContent.text = article.content
         holder.mArticleNameAuthor.text = article.author
         holder.mArticleDate.text = article.publishedAt
-        holder.mButtonBack.setOnClickListener{handler.back()}
+        holder.mButtonBack.setOnClickListener{
+            handler.back()
+        }
 
         holder.mUrlArticle.text =article.url
 
-        holder.mUrlArticle.setOnClickListener{handler.showPage(article.url)}
+        holder.mUrlArticle.setOnClickListener{
+            handler.showPage(article.url)
+        }
         val context= holder.itemView.context
         //diplay image of article
         Glide.with(context)

@@ -51,6 +51,7 @@ class ListArticlesFragment (subject: String): Fragment() , ListArticlesHandler{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getArticles(subject)
+
     }
     /**
      * Récupère la liste des articles dans un thread secondaire

@@ -17,7 +17,6 @@ class PageAccueilFragment : Fragment(){
     lateinit var buttonByCategory: Button
     lateinit var buttonByCountry: Button
     lateinit var buttonByEditor: Button
-    lateinit var buttonNews: Button
 
 
     /**
@@ -35,20 +34,20 @@ class PageAccueilFragment : Fragment(){
         buttonByCategory=view.findViewById(R.id.buttonByCategory)
         buttonByCountry=view.findViewById(R.id.buttonByCountry)
         buttonByEditor=view.findViewById(R.id.buttonByEditor)
-        buttonNews=view.findViewById(R.id.buttonNews)
 
         return view
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (activity as? NavigationListener)?.let{
-            it.showInFragment(R.id.frameLayout_ListArticles,ListArticlesFragment("actuality"))
-            it.updateTitle(R.string.list_articles)
+            it.updateTitle(R.string.accueil)
+            it.showInFragment(R.id.frameLayout_ListArticles, ListArticlesAccueilFragment("actuality"))
         }
 
 
-
     }
+
 }
