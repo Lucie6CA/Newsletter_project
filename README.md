@@ -23,11 +23,17 @@ Nous n'avons pas reussi à finir l'ajout des articles favoris dans la base de do
 
 
 Contraintes:
+
 En Kotlin
+
 Sur AndroidStudio
+
 Vues en XML
+
 Suivi du MVC
+
 Une seule activité utilisée
+
 Utilisation de git
 
 
