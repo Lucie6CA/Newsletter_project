@@ -14,9 +14,11 @@ import com.example.newsletter.R
 import com.example.newsletter.data.FavDB
 import com.example.newsletter.models.Article
 import com.example.newsletter.models.FavItems
+import com.example.newsletter.models.Source
 import java.util.*
 
-class FavoriteAdapter(private val context: Context, val handler: ListArticlesHandler, private var favoriteList : MutableList<FavItems>) : RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
+class FavoriteAdapter(private val context: Context, val handler: ListArticlesHandler, private var favoriteList : MutableList<FavItems>) :
+    RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
 
     private lateinit var favDB: FavDB
 
@@ -30,11 +32,11 @@ class FavoriteAdapter(private val context: Context, val handler: ListArticlesHan
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article: FavItems = favoriteList[position]
-        var details = Article("","",article.author,article.title,
-            article.description,article.url, article.urlToImage, "","")
+        var details = Article("", Source("",""),article.author,article.title,
+            article.description,article.url, article.urlToImage,Date(),"",1)
 
 
-        // Display Neighbour Name
+        // Display Article infos
         holder.mArticleTitle.text = article.title
 
         holder.mArticleDescription.text = article.description

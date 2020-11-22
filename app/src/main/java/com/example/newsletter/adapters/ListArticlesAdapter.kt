@@ -1,6 +1,7 @@
 package com.example.newsletter.adapters
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.icu.number.NumberFormatter.with
 import android.view.LayoutInflater
 import android.view.View
@@ -14,14 +15,27 @@ import com.example.newsletter.R
 import com.example.newsletter.models.Article
 import com.example.newsletter.models.ArticleResponse
 import com.bumptech.glide.Glide
+import com.example.newsletter.data.FavDB
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListArticlesAdapter (
         items: ArticleResponse, val handler: ListArticlesHandler, val context : Context
 ) : RecyclerView.Adapter<ListArticlesAdapter.ViewHolder>() {
 
     private val mArticles: ArticleResponse = items
+    private lateinit var favDB: FavDB
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        favDB= FavDB(context)
+
+        val prefs: SharedPreferences =
+            context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val firstStart = prefs.getBoolean("firstStart", true)
+        if (firstStart) {
+            createTableOnFirstStart()
+        }
+
         val view: View = LayoutInflater.from(parent.context)
                 .inflate(R.layout.item, parent, false)
         return ViewHolder(view)
@@ -32,14 +46,15 @@ class ListArticlesAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val article: Article = mArticles.articles[position]
 
+        val sdfOut = SimpleDateFormat("dd-MM-yyyy")
+        val date: Date = article.publishedAt
+        val dateString = sdfOut.format(date)
+        holder.mArticleDate.text = dateString
         //Display Article infos
-        holder.mArticleDate.text=article.publishedAt
+       // holder.mArticleDate.text=article.publishedAt
         holder.mArticleDescription.text=article.description
         holder.mArticleNameAuthor.text=article.author
         holder.mArticleTitle.text=article.title
-
-        //boutton favoris- afficher plein ou creux
-
 
 
         holder.mArticleTitle.setOnClickListener{
@@ -52,6 +67,7 @@ class ListArticlesAdapter (
         }
 
         //faire favoris
+
 
         holder.mArticleImage.setOnClickListener{
             handler.showArticle(article)
@@ -67,6 +83,12 @@ class ListArticlesAdapter (
                 .skipMemoryCache(false)
                 .into(holder.mArticleImage)
 
+    }
+    private fun createTableOnFirstStart() {
+        val prefs: SharedPreferences = context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putBoolean("firstStart", false)
+        editor.apply()
     }
 
 

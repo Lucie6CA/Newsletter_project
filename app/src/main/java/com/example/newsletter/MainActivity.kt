@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity(), NavigationListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_activity_main, menu)
-        menu.findItem(R.id.menu_activity_main_home).isVisible = false
         val searchItem = menu?.findItem(R.id.menu_activity_main_search)
         val searchView = searchItem?.actionView as SearchView
 

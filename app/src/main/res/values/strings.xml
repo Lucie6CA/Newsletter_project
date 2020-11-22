@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Newsletter</string>
+    <string name="app_name">NewsKC</string>
     <string name="accueil">NewsKC </string>
     <string name="list_articles">Liste des articles</string>
     <string name="details_article">Article</string>
+    <string name="Pays">Pays</string>
+    <string name="Category">Catégories</string>
+    <string name="Editeurs">Editeurs</string>
     <string name="favoris">Liste des favoris</string>
     <string name="aPropos">A propos de nous</string>
 

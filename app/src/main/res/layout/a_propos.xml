@@ -5,11 +5,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#EE0000"
+            android:text="Notre équipe:"
+            android:textSize="20dp"
+            android:textStyle="bold">
+
+        </TextView>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,7 +57,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@mipmap/ic_photo_lucie" />
+                android:src="@mipmap/ic_photo_lucie" />
         </LinearLayout>
 
 
@@ -70,14 +89,27 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@mipmap/ic_photo_ines" />
+                android:src="@mipmap/ic_photo_ines" />
         </LinearLayout>
 
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#EE0000"
+            android:text="Lien github de notre projet"
+            android:textSize="18dp"
+            android:textStyle="bold">
+
+        </TextView>
     <TextView
         android:id="@+id/liengithub"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:text="https://github.com/Lucie6CA/Newsletter_project"
         android:textSize="16sp"
@@ -85,27 +117,111 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:textColor="#EE0000"
+            android:text="La liste des librairies externes utilisées dans l'application :"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
+        </TextView>
     <TextView
-        android:id="@+id/librairies"
+        android:id="@+id/librairies1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="La liste des librairies externes utilisées dans l'applications"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="5dp"
+        android:text="Retrofit"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/librairies2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SQLiteDataBase"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#EE0000"
+            android:text="La liste des fonctionnalités de l'application :"
+            android:textSize="15dp"
+            android:textStyle="bold">
+
+        </TextView>
 
     <TextView
-        android:id="@+id/fonctionnalite"
+        android:id="@+id/fonctionnalite1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="La liste des fonctionnalités de l'application"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="5dp"
+        android:text="Affichage des articles par catégorie, pays, éditeurs et les articles d'actualité"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/fonctionnalite2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Barre de recherche et la toolbar fonctionnelle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/fonctionnalite3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coeur plein - coeur vide pour signaler un favoris (seulement dans le détail de l'article)"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/fonctionnalite4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Le détail de l'article montre le contenu et non pas la description affichée déjà dans la liste"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/fonctionnalite5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cette vue 'A propos de nous'"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/fonctionnalite6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="L'option d'ajouter des photos pour les membres de l'équipe"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
     </LinearLayout>
+</ScrollView>
 
 </androidx.cardview.widget.CardView>

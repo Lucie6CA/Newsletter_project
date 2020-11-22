@@ -13,6 +13,8 @@ import com.example.newsletter.R
 import com.example.newsletter.data.FavDB
 import com.example.newsletter.fragments.ListArticlesFragment
 import com.example.newsletter.models.Article
+import java.text.SimpleDateFormat
+import java.util.*
 
 class DetailsArticleAdapter(
     private val context: Context, items: Article, val handler: ListArticlesHandler
@@ -29,26 +31,38 @@ class DetailsArticleAdapter(
         holder.mArticleTitle.text = article.title
         holder.mArticleContent.text = article.content
         holder.mArticleNameAuthor.text = article.author
-        holder.mArticleDate.text = article.publishedAt
-        holder.mButtonBack.setOnClickListener{handler.back()}
+
+        //holder.mArticleDate.text = article.publishedAt
+        val sdfOut = SimpleDateFormat("dd-MM-yyyy")
+        val date: Date = article.publishedAt
+        val dateString = sdfOut.format(date)
+        holder.mArticleDate.text = dateString
+
+        holder.mButtonBack.setOnClickListener{
+            handler.back()
+        }
+
         holder.mButtonFavoris.setOnClickListener{
             if (article.favorite == 0 ){
                 holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_plein)
                 article.favorite = 1
-                favDB.insertIntoTheDatabase(
+                /*favDB.insertIntoTheDatabase(
+
                     article.id ?: "",
                     article.title ?: "",
                     article.description ?: "",
                     article.author ?: "",
                     article.urlToImage ?: "",
-                    article.url ?: "",
-                    1)
+                    article.url ?: "", 1)
+
+                    */
+
 
             }
             else
             {
                 article.favorite = 0
-                favDB.remove_fav(article.id)
+                //favDB.remove_fav(article.id)
                 holder.mButtonFavoris.setImageResource(R.drawable.ic_coeur_vide)
             }
 
@@ -76,7 +90,6 @@ class DetailsArticleAdapter(
         val mButtonFavoris: ImageButton
         val mUrlArticle: TextView
 
-        //val mArticleFavorite: ImageButton
 
         init {
             // Enable click on item
@@ -88,13 +101,14 @@ class DetailsArticleAdapter(
             mButtonBack = view.findViewById(R.id.boutonRetour)
             mButtonFavoris = view.findViewById(R.id.coeurfavoris)
             mUrlArticle=view.findViewById(R.id.urlArticle)
-            //mArticleFavorite = view.findViewById(R.id.item_list_favorite_button)
         }
     }
 
     override fun getItemCount(): Int {
         return 1
     }
+
+
 
 }
 

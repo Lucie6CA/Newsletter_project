@@ -1,6 +1,7 @@
 package com.example.newsletter.adapters
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,15 +11,29 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newsletter.R
+import com.example.newsletter.data.FavDB
 import com.example.newsletter.models.Article
 import com.example.newsletter.models.ArticleResponse
 import kotlinx.coroutines.CoroutineScope
+import java.text.SimpleDateFormat
+import java.util.*
 
 class ListArticlesAccueilAdapter(
     items: ArticleResponse, val handler: ListArticlesAccueilHandler, val context: Context
 ) : RecyclerView.Adapter<ListArticlesAccueilAdapter.ViewHolder>() {
     private val mArticles: ArticleResponse = items
+    private lateinit var favDB: FavDB
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+
+        favDB= FavDB(context)
+
+        val prefs: SharedPreferences =
+            context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val firstStart = prefs.getBoolean("firstStart", true)
+        if (firstStart) {
+            createTableOnFirstStart()
+        }
         val view: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.item, parent, false)
         return ViewHolder(view)
@@ -27,12 +42,16 @@ class ListArticlesAccueilAdapter(
         val article: Article = mArticles.articles[position]
 
         //Display Article infos
-        holder.mArticleDate.text=article.publishedAt
+        val sdfOut = SimpleDateFormat("dd-MM-yyyy")
+        val date: Date = article.publishedAt
+        val dateString = sdfOut.format(date)
+        holder.mArticleDate.text = dateString
+
         holder.mArticleDescription.text=article.description
         holder.mArticleNameAuthor.text=article.author
         holder.mArticleTitle.text=article.title
 
-        //boutton favoris- afficher plein ou creux
+
 
 
 
@@ -88,6 +107,15 @@ class ListArticlesAccueilAdapter(
     override fun getItemCount(): Int {
         return mArticles.articles.size
     }
+
+    private fun createTableOnFirstStart() {
+        val prefs: SharedPreferences = context.getSharedPreferences("prefs", Context.MODE_PRIVATE)
+        val editor = prefs.edit()
+        editor.putBoolean("firstStart", false)
+        editor.apply()
+    }
+
+
 
 
 }

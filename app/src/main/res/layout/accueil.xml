@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+
+
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".MainActivity"
     android:id="@+id/relative1">
+
+
 
 
     <TextView
@@ -58,7 +68,9 @@
         android:layout_marginRight="10dp"
         android:layout_below="@id/buttonAllArticles"
         android:layout_marginTop="20dp"
-        android:background="@color/black">
+        android:background="@color/black"
+
+        >
 
 
 
@@ -143,7 +155,7 @@
     <FrameLayout
         android:id="@+id/frameLayout_ListArticlesFavoris"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_below="@id/buttonFavoris"
@@ -175,5 +187,5 @@
 
 
 
-
 </RelativeLayout>
+</ScrollView>

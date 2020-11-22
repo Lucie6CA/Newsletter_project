@@ -64,19 +64,19 @@ class PageAccueilFragment : Fragment(){
         buttonByCategory.setOnClickListener {
             (activity as? NavigationListener)?.let {
                 it.showFragment(ListCategoryFragment())
-                it.updateTitle(R.string.list_articles)
+                it.updateTitle(R.string.Category)
             }
         }
         buttonByCountry.setOnClickListener {
             (activity as? NavigationListener)?.let {
                 it.showFragment(ListCountryFragment())
-                it.updateTitle(R.string.list_articles)
+                it.updateTitle(R.string.Pays)
             }
         }
         buttonByEditor.setOnClickListener {
             (activity as? NavigationListener)?.let {
                 it.showFragment(ListEditeursFragment())
-                it.updateTitle(R.string.list_articles)
+                it.updateTitle(R.string.Editeurs)
             }
         }
         buttonFavoris.setOnClickListener {
@@ -92,6 +92,11 @@ class PageAccueilFragment : Fragment(){
             }
         }
 
+
+    }
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.findItem(R.id.menu_activity_main_home).isVisible = false
+        super.onPrepareOptionsMenu(menu)
     }
 
 }
